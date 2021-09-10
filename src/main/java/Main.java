@@ -2,6 +2,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 
+//для проверки работы методов получения Query Parameters - start Main
+// and go to link
+//http://localhost:9999/classic.html?name=alena&lastname=ocheretnaia&age=36&value=1&country=usa&value=1
+
 public class Main {
 
     public static void main(String[] args) {
@@ -27,10 +31,6 @@ public class Main {
             out.write(content);
             out.flush();
         }));
-
-//        server.addHandler("GET", "/index.html", ((request, out) -> {
-//
-//        }));
 
         server.startServer(9999);
 

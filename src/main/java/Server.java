@@ -22,6 +22,16 @@ public class Server {
         out.flush();
     });
 
+    private final Handler badRequestHandler = ((request, out) -> {
+        out.write((
+                "HTTP/1.1 400 Not Found\r\n" +
+                        "Content-Length: 0\r\n" +
+                        "Connection: close\r\n" +
+                        "\r\n"
+        ).getBytes());
+        out.flush();
+    });
+
     public Server(int poolSize) {
         this.executorService = Executors.newFixedThreadPool(poolSize);
     }
